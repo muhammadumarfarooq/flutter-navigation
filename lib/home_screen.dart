@@ -51,18 +51,21 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, ScreenTwo.id);
-            },
-            child: const Text('Screen two'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, ScreenThree.id);
-            },
-            child: const Text('Screen Three'),
-          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 100,
+              itemBuilder: (context, index) {
+                return const ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.green,
+                  ),
+                  title: Text('Umar Farooq'),
+                  subtitle: Text('Frontend developer'),
+                  trailing: Text('3:50AM'),
+                );
+              },
+            ),
+          )
         ],
       ),
     );
