@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation/home_screen.dart';
+import 'package:flutter_navigation/screen_three.dart';
 
 class ScreenTwo extends StatelessWidget {
-  static const String id = 'home_screen';
+  static const String id = 'screen_two';
 
   const ScreenTwo({Key? key}) : super(key: key);
 
@@ -15,15 +16,18 @@ class ScreenTwo extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(
-            child: TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, HomeScreen.id);
-              },
-              child: const Text('Screen One'),
-            ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, HomeScreen.id);
+            },
+            child: const Text('Screen One'),
           ),
-          Text('asdfasdfsadf')
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, ScreenThree.id);
+            },
+            child: const Text('Screen Three'),
+          ),
         ],
       ),
     );
